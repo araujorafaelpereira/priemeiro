@@ -15,7 +15,7 @@ public class fundamentos {
 
         String opcao = "";
         double area = 0; // receber o resultado dos calculos de areas
-        while (!opcao.toUpperCase().equals("S")) {
+       // while (!opcao.toUpperCase().equals("S")) {
             entrada = new Scanner(System.in);// Ele que ligou
             System.out.println("Escolha o calculo desejado");
             System.out.println("(1) - Area do QUadrado ");
@@ -25,6 +25,7 @@ public class fundamentos {
             System.out.println("(5)  - Tabuada");
             System.out.println("(6)  - Fibonacci");
             System.out.println("(7)  - Contagem Regressiva");
+            System.out.println("(8)   -Fazer uma divisao");
             System.out.println("(S)  -  Sair");
             opcao = entrada.nextLine(); //leitura da opcao
             switch (opcao) {
@@ -54,12 +55,15 @@ public class fundamentos {
                 case "7":
                     contagemRegressiva();
                     break;
+                case "8":
+                    divisaoporzero();
+                    break;
                 default:
                     System.out.println("Numero invalido");
             }
         }
-        System.out.println("Agradecemos Pela preferencia!!");
-    }
+        //System.out.println("Agradecemos Pela preferencia!!");
+   // }
 
     public static void fibonacci() {
         System.out.print("Quantos numeros deseja calcular na sequencia: ");
@@ -161,5 +165,16 @@ public class fundamentos {
 
 
     }
+        public static void  divisaoporzero(){
+            try {System.out.print("Qual e o dividendo (Numero a ser dividido) ?");
+            float dividendo = entrada.nextFloat();
+            System.out.print("Qual e o divisor (Numero que divide o dividendo) ?  ");
+            float divisor = entrada.nextFloat();
 
+                System.out.println(" O resultado e : " + dividendo/divisor); // O parametro certo do metodo vai dentro do try eo errado dentro do catch
+            } catch(Exception e) {
+                System.out.println("Nao e possivel dividr por zero - Erro:" + e.getMessage());
+
+            }
+        }
 }
