@@ -1,13 +1,14 @@
-package Fundamentos;
+package fundamentos;
 
 import java.util.Scanner;
 
-public class fundamentos {
+public class Medidas {
     // 1 Pacote
     // 2 Bibliotecas
     //3 classe
 
-    static Scanner entrada; // Estatico sempre entra jogando e não sai de jeito nenhum
+    static Scanner entrada = new Scanner(System.in);; // Ele que ligou, para usar um scaner que está em um metodo em outra classe deves-se usar ele no escopo global
+    // Estatico sempre entra jogando e não sai de jeito nenhum
 
     //sempre está jogando
     //Aqui ele inicializa o objeto para o inicio da classe como um todo
@@ -16,7 +17,7 @@ public class fundamentos {
         String opcao = "";
         double area = 0; // receber o resultado dos calculos de areas
        // while (!opcao.toUpperCase().equals("S")) {
-            entrada = new Scanner(System.in);// Ele que ligou
+            // Ele que ligou
             System.out.println("Escolha o calculo desejado");
             System.out.println("(1) - Area do QUadrado ");
             System.out.println("(2)  - Area do Retangulo");
@@ -142,9 +143,9 @@ public class fundamentos {
 
     public static void tabuada() {
         System.out.println("Você quer calcular a tabuada de qual numero ?");
-        byte numero = entrada.nextByte(); //byte é um numero de 0 a 255
+        int numero = entrada.nextInt(); //byte é um numero de 0 a 255
 
-        for (byte i = 1; i <= 10; i++) {
+        for (int i = 1; i <= 10; i++) {
             int resultado = numero * i;
             System.out.println(numero + "X" + i + "=" + resultado);
 
@@ -165,7 +166,7 @@ public class fundamentos {
 
 
     }
-        public static void  divisaoporzero(){
+       public static void  divisaoporzero(){
             try {System.out.print("Qual e o dividendo (Numero a ser dividido) ?");
             float dividendo = entrada.nextFloat();
             System.out.print("Qual e o divisor (Numero que divide o dividendo) ?  ");
